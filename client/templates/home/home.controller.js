@@ -19,11 +19,18 @@ SocketIOApp.controller('homeController', function($scope) {
     });
 
     socket.on('someone_joined', () => {sc.getListClients(sc.user)});
-    socket.on('someone_left', () => {sc.getListClients(sc.user)});
+    socket.on('someone_left', () => {
+        sc.getListClients(sc.user, (new_clients) => {
+            if (new_clients.every(client => client !== sc.client)) {
+                sc.client = '';
+            }
+        });
+    });
 
-    sc.getListClients = function(user) {
+    sc.getListClients = function(user, callback) {
         $.get(`${BASE_URL}/clients?user=${user}`, (res) => {
             $scope.$apply(sc.clients = res.data.clients);
+            if (callback) callback(res.data.clients);
         });
     };
 
