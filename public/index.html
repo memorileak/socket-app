@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="SocketIO">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Socket IO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        const socket = io();
+    </script>
+</head>
+<body>
+    <div ng-view></div>
+
+    <script type="text/javascript" src="/assets/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/lib/angular-js/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/angular-js/angular-route.min.js"></script>
+    <script src="/app.js"></script>
+    <script src="/routes/routes.js"></script>
+    <script src="/templates/home/home.controller.js"></script>
+</body>
+</html>

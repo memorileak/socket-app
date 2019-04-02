@@ -1,0 +1,1 @@
+const SocketIOApp = angular.module('SocketIO', ['ngRoute']);
