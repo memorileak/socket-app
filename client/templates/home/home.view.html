@@ -194,7 +194,7 @@
                                             <div 
                                                 class="chat-message" 
                                                 ng-class="{right: sc.user === message.from, left: sc.user !== message.from}" 
-                                                ng-repeat="message in sc.messages"
+                                                ng-repeat="message in sc.all_channels[sc.client] || []"
                                             >
                                                 <img class="message-avatar" src="img/a6.jpg" alt="">
                                                 <div class="message">

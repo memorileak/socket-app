@@ -13,24 +13,24 @@ app.use(express.static('client'));
 app.use(express.static('client/assets'));
 
 io.on('connection', (socket) => {
-    console.log('a user connected: ' + socket.id);
-
-    socket.emit('joined', socket.id);
-    socket.broadcast.emit('someone_joined');
-
-    socket.on('disconnect', () => {
-        console.log('a user disconnected: ' + socket.id);
-        delete clients[socket.id];
-        socket.broadcast.emit('someone_left');
-    });
-    
     clients[socket.id] = socket;
-
+    
+    socket.emit('joined', socket.id);
+    socket.broadcast.emit('someone_joined', socket.id);
+    
+    console.log('a user connected: ' + socket.id);
+    
     socket.on('send_message', ({to, text}) => {
         if (clients[to]) {
             clients[to].emit('receive_message', {from: socket.id, text});
             socket.emit('receive_message', {from: socket.id, text});
         }
+    });
+
+    socket.on('disconnect', () => {
+        console.log('a user disconnected: ' + socket.id);
+        delete clients[socket.id];
+        socket.broadcast.emit('someone_left', socket.id);
     });
 });
 
