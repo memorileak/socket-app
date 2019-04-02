@@ -164,7 +164,6 @@
                     <div class="ibox chat-view">
 
                         <div class="ibox-title">
-                            <small class="pull-right text-muted">Last message: Mon Jan 26 2015 - 18:39:23</small>
                             Chat room panel
                         </div>
 
@@ -172,147 +171,63 @@
                         <div class="ibox-content">
 
                             <div class="row">
-
-                                <div class="col-md-9 ">
-                                    <div class="chat-discussion">
-
-                                        <div class="chat-message left">
-                                            <img class="message-avatar" src="img/a1.jpg" alt="">
-                                            <div class="message">
-                                                <a class="message-author" href="#"> Michael Smith </a>
-                                                <span class="message-date"> Mon Jan 26 2015 - 18:39:23 </span>
-                                                <span class="message-content">
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                                                    volutpat.
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="chat-message right">
-                                            <img class="message-avatar" src="img/a4.jpg" alt="">
-                                            <div class="message">
-                                                <a class="message-author" href="#"> Karl Jordan </a>
-                                                <span class="message-date"> Fri Jan 25 2015 - 11:12:36 </span>
-                                                <span class="message-content">
-                                                    Many desktop publishing packages and web page editors now use Lorem
-                                                    Ipsum as their default model text, and a search for 'lorem ipsum'
-                                                    will uncover.
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="chat-message right">
-                                            <img class="message-avatar" src="img/a2.jpg" alt="">
-                                            <div class="message">
-                                                <a class="message-author" href="#"> Michael Smith </a>
-                                                <span class="message-date"> Fri Jan 25 2015 - 11:12:36 </span>
-                                                <span class="message-content">
-                                                    There are many variations of passages of Lorem Ipsum available, but
-                                                    the majority have suffered alteration.
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="chat-message left">
-                                            <img class="message-avatar" src="img/a5.jpg" alt="">
-                                            <div class="message">
-                                                <a class="message-author" href="#"> Alice Jordan </a>
-                                                <span class="message-date"> Fri Jan 25 2015 - 11:12:36 </span>
-                                                <span class="message-content">
-                                                    All the Lorem Ipsum generators on the Internet tend to repeat
-                                                    predefined chunks as necessary, making this the first true
-                                                    generator on the Internet.
-                                                    It uses a dictionary of over 200 Latin words.
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="chat-message right">
-                                            <img class="message-avatar" src="img/a6.jpg" alt="">
-                                            <div class="message">
-                                                <a class="message-author" href="#"> Mark Smith </a>
-                                                <span class="message-date"> Fri Jan 25 2015 - 11:12:36 </span>
-                                                <span class="message-content">
-                                                    All the Lorem Ipsum generators on the Internet tend to repeat
-                                                    predefined chunks as necessary, making this the first true
-                                                    generator on the Internet.
-                                                    It uses a dictionary of over 200 Latin words.
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
                                 <div class="col-md-3">
-                                    <div class="chat-users">
-
-
+                                    <div class="chat-users" style="margin-left: 0; margin-right: -30px;">
                                         <div class="users-list">
-                                            <div class="chat-user">
-                                                <img class="chat-avatar" src="img/a4.jpg" alt="">
-                                                <div class="chat-user-name">
-                                                    <a href="#">Karl Jordan</a>
-                                                </div>
-                                            </div>
-                                            <div class="chat-user">
-                                                <img class="chat-avatar" src="img/a1.jpg" alt="">
-                                                <div class="chat-user-name">
-                                                    <a href="#">Monica Smith</a>
-                                                </div>
-                                            </div>
-                                            <div class="chat-user">
-                                                <span class="pull-right label label-primary">Online</span>
-                                                <img class="chat-avatar" src="img/a2.jpg" alt="">
-                                                <div class="chat-user-name">
-                                                    <a href="#">Michael Smith</a>
-                                                </div>
-                                            </div>
-                                            <div class="chat-user">
-                                                <span class="pull-right label label-primary">Online</span>
-                                                <img class="chat-avatar" src="img/a3.jpg" alt="">
-                                                <div class="chat-user-name">
-                                                    <a href="#">Janet Smith</a>
-                                                </div>
-                                            </div>
-                                            <div class="chat-user">
-                                                <img class="chat-avatar" src="img/a5.jpg" alt="">
-                                                <div class="chat-user-name">
-                                                    <a href="#">Alice Smith</a>
-                                                </div>
-                                            </div>
-                                            <div class="chat-user">
+                                            <div 
+                                                class="chat-user" 
+                                                style="cursor: pointer;" 
+                                                ng-style="client === sc.client ? {'background-color': '#eee'} : {}"
+                                                ng-repeat="client in sc.clients" 
+                                                ng-click="sc.handleUserClick(client)"
+                                            >
                                                 <img class="chat-avatar" src="img/a6.jpg" alt="">
                                                 <div class="chat-user-name">
-                                                    <a href="#">Monica Cale</a>
+                                                    <span style="cursor: inherit;">{{client}}</span>
                                                 </div>
                                             </div>
-                                            <div class="chat-user">
-                                                <img class="chat-avatar" src="img/a2.jpg" alt="">
-                                                <div class="chat-user-name">
-                                                    <a href="#">Mark Jordan</a>
-                                                </div>
-                                            </div>
-                                            <div class="chat-user">
-                                                <span class="pull-right label label-primary">Online</span>
-                                                <img class="chat-avatar" src="img/a3.jpg" alt="">
-                                                <div class="chat-user-name">
-                                                    <a href="#">Janet Smith</a>
-                                                </div>
-                                            </div>
-
-
                                         </div>
-
                                     </div>
                                 </div>
-
+                                <div class="col-md-9 ">
+                                        <div class="chat-discussion">
+                                            <div 
+                                                class="chat-message" 
+                                                ng-class="{right: sc.user === message.from, left: sc.user !== message.from}" 
+                                                ng-repeat="message in sc.messages"
+                                            >
+                                                <img class="message-avatar" src="img/a6.jpg" alt="">
+                                                <div class="message">
+                                                    <a class="message-author" href="#">{{message.from}}</a>
+                                                    <span class="message-content">
+                                                        {{message.text}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="chat-message-form">
-
-                                        <div class="form-group">
-
-                                            <textarea class="form-control message-input" name="message" placeholder="Enter message text"></textarea>
-                                        </div>
+                                        <form ng-submit="sc.sendMessage()">
+                                            <div class="form-group" style="display: flex; align-items: center;">
+                                                <input 
+                                                    type="text"
+                                                    style="width: unset; flex-grow: 1;"
+                                                    class="form-control" 
+                                                    ng-model="sc.message_text" 
+                                                    name="message" 
+                                                    placeholder="Enter message text"
+                                                />
+                                                <input 
+                                                    style="margin-left: 5px;"
+                                                    type="submit"
+                                                    class="btn btn-primary"
+                                                    value="Send"
+                                                />
+                                            </div>
+                                        </form>
 
                                     </div>
                                 </div>
@@ -328,90 +243,5 @@
 
 
         </div>
-        <div class="footer">
-            <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
-            </div>
-            <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2017
-            </div>
-        </div>
-
-    </div>
-    <div class="small-chat-box fadeInRight animated">
-
-        <div class="heading" draggable="true">
-            <small class="chat-date pull-right">
-                02.19.2015
-            </small>
-            Small chat
-        </div>
-
-        <div class="content">
-
-            <div class="left">
-                <div class="author-name">
-                    Monica Jackson <small class="chat-date">
-                        10:02 am
-                    </small>
-                </div>
-                <div class="chat-message active">
-                    Lorem Ipsum is simply dummy text input.
-                </div>
-
-            </div>
-            <div class="right">
-                <div class="author-name">
-                    Mick Smith
-                    <small class="chat-date">
-                        11:24 am
-                    </small>
-                </div>
-                <div class="chat-message">
-                    Lorem Ipsum is simpl.
-                </div>
-            </div>
-            <div class="left">
-                <div class="author-name">
-                    Alice Novak
-                    <small class="chat-date">
-                        08:45 pm
-                    </small>
-                </div>
-                <div class="chat-message active">
-                    Check this stock char.
-                </div>
-            </div>
-            <div class="right">
-                <div class="author-name">
-                    Anna Lamson
-                    <small class="chat-date">
-                        11:24 am
-                    </small>
-                </div>
-                <div class="chat-message">
-                    The standard chunk of Lorem Ipsum
-                </div>
-            </div>
-            <div class="left">
-                <div class="author-name">
-                    Mick Lane
-                    <small class="chat-date">
-                        08:45 pm
-                    </small>
-                </div>
-                <div class="chat-message active">
-                    I belive that. Lorem Ipsum is simply dummy text.
-                </div>
-            </div>
-
-
-        </div>
-        <div class="form-chat">
-            <div class="input-group input-group-sm"><input type="text" class="form-control"> <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button">Send
-                    </button> </span></div>
-        </div>
-
     </div>
 </div>
